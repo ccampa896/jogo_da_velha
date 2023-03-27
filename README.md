@@ -50,6 +50,6 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/ccampa896/ccampa896/blob/output/snake.svg" alt="Snake animation" />
+<img src="./imagens/github-contribution-grid-snake.gif" alt="Snake animation" />
 
 ###
