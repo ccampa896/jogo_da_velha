@@ -1,0 +1,5 @@
+# Ignore arquivos do VS Code
+.vscode
+
+#Ignore arquivos yml
+*.yml

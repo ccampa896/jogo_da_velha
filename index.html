@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js" defer></script>
+  </head>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          title="Jogo da Velha: Wikipédia, a enciclopédia livre"
+          href="#"
+          id="jogo_wiki"
+        >
+          <img
+            src="./imagens/hash.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Jogo da Velha
+        </a>
+        <a class="navbar-brand" id="jogadores" href="#">
+          <img
+            src="./imagens/person-fill.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Jogadores
+        </a>
+        <a class="navbar-brand" id="iniciarJogo" href="#">
+          <img
+            src="./imagens/play-circle.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Iniciar
+        </a>
+        <a class="navbar-brand" id="reset" href="#">
+          <img
+            src="./imagens/repeat.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Reiniciar
+        </a>
+        <a class="navbar-brand" id="pararJogo" href="#">
+          <img
+            src="./imagens/x-lg.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Parar jogo
+        </a>
+        <a class="navbar-brand" id="is-light" href="#">
+          <img
+            src="./imagens/sun-fill.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Modo Claro
+        </a>
+        <a class="navbar-brand" id="is-dark" href="#">
+          <img
+            src="./imagens/moon-fill.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Modo Escuro
+        </a>
+        <a class="navbar-brand" id="info" href="#">
+          <img
+            src="./imagens/info.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Info
+        </a>
+        <a class="navbar-brand" id="icons" href="#">
+          <img
+            src="./imagens/images.svg"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Icons
+        </a>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="clearfix">
+      <img
+        src="./imagens/hash.svg"
+        class="float-end"
+        id="hashtag"
+        alt="hashtag"
+      />
+      <p>
+        O jogo da velha (português brasileiro) ou jogo do galo (português
+        europeu) ou três em linha é um jogo e/ou passatempo popular. É um jogo
+        de regras extremamente simples, que não traz grandes dificuldades para
+        seus jogadores e é facilmente aprendido. A origem é desconhecida, com
+        indicações de que pode ter começado no antigo Egito, onde foram
+        encontrados tabuleiros esculpidos na rocha, que teriam mais de 3.500
+        anos. De alguma forma, é um jogo "aparentado" dos "Merels".
+      </p>
+      <img
+        src="./imagens/controller.svg"
+        class="float-start"
+        id="controller"
+        alt="controller"
+      />
+      <p>
+        Algumas lendas urbanas contam que o jogo terá nascido em Portugal, na
+        cidade de Almada no ano 545. No entanto, só foi popularizado no ano
+        1500, pelo descobridor Pedro Álvares Cabral, que adorava jogar este jogo
+        durante as suas viagens. Álvares Cabral terá decidido que este jogo
+        seria o primeiro a ser ensinado ao povo indígena no Brasil. O jogo pode
+        ser jogado sobre um tabuleiro ou mesmo sendo riscado sobre um pedaço de
+        papel ou mesa. O menor tabuleiro do mundo foi feito com DNA.
+      </p>
+      <p>
+        Se os dois jogadores jogarem sempre da melhor forma, o jogo terminará
+        sempre em empate. A lógica do jogo é muito simples, de modo que não é
+        difícil deduzir ou decorar todas as possibilidades para efetuar a melhor
+        jogada - apesar de o número total de possibilidades ser muito grande, a
+        maioria delas é simétrica, além de que as regras são simples. Por esse
+        motivo, é muito comum que o jogo empate (ou "dê velha").
+      </p>
+      <br />
+      <div class="tresD">
+        <div class="front">
+          <img src="./imagens/notebook.png" alt="Tecnologia da Informação" />
+        </div>
+        <div class="back">
+          <img src="./imagens/hash.png" alt="Tecnologia da Informação" />
+        </div>
+      </div>
+    </div>
+    <div id="jogadorAtual">
+      <h3 id="jogadorAtualh3"></h3>
+    </div>
+    <div id="players">
+      <h3>Jogadores</h3>
+      <label for="Jogador 1"> Jogador 1: </label>
+      <input type="text" id="jogador1" placeholder="Nome do jogador 1..." />
+      <br />
+      <br />
+      <label for="Jogador 1"> Jogador 2: </label>
+      <input type="text" id="jogador2" placeholder="Nome do jogador 2..."/>
+      <br />
+      <br />
+      <input type="submit" id="submit" value="Ok" />
+    </div>
+    <div id="jogo">
+      <table cellpadding="0" cellspacing="0" id="table">
+        <tr>
+          <td
+            class="table-data" id="cell0"
+          >
+            &nbsp;
+          </td>
+
+          <td
+            class="table-data" id="cell1"
+          >
+            &nbsp;
+          </td>
+
+          <td
+            class="table-data" id="cell2"
+          >
+            &nbsp;
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            class="table-data" id="cell3"
+          >
+            &nbsp;
+          </td>
+
+          <td
+            class="table-data" id="cell4"
+          >
+            &nbsp;
+          </td>
+
+          <td
+            class="table-data" id="cell5"
+          >
+            &nbsp;
+          </td>
+        </tr>
+
+        <tr>
+          <td
+            class="table-data" id="cell6"
+          >
+            &nbsp;
+          </td>
+
+          <td
+            class="table-data" id="cell7"
+          >
+            &nbsp;
+          </td>
+
+          <td
+            class="table-data" id="cell8"
+          >
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+  </body>
+</html>
