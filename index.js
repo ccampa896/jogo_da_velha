@@ -178,8 +178,8 @@ allElementsInSomeLine = function () {
       cellWins(table_datas[i + 1]);
       cellWins(table_datas[i + 2]);
       alert(jogador1.nome + ' wins!!!');
+      removeClicks();
     }
-
     if (
       tabuleiro[i] == 'O' &&
       tabuleiro[i + 1] == 'O' &&
@@ -189,6 +189,7 @@ allElementsInSomeLine = function () {
       cellWins(table_datas[i + 1]);
       cellWins(table_datas[i + 2]);
       alert(jogador2.nome + ' wins!!!');
+      removeClicks();
     }
   }
 };
@@ -206,26 +207,27 @@ allElementsInSomeColumn = function () {
       cellWins(table_datas[i + 3]);
       cellWins(table_datas[i + 6]);
       alert(jogador1.nome + ' wins!!!');
-    }
-
-    if (
-      tabuleiro[i] == 'O' &&
-      tabuleiro[i + 3] == 'O' &&
-      tabuleiro[i + 6] == 'O'
-    ) {
-      cellWins(table_datas[i]);
-      cellWins(table_datas[i + 3]);
-      cellWins(table_datas[i + 6]);
-      alert(jogador2.nome + ' wins!!!');
+      removeClicks();
+      if (
+        tabuleiro[i] == 'O' &&
+        tabuleiro[i + 3] == 'O' &&
+        tabuleiro[i + 6] == 'O'
+      ) {
+        cellWins(table_datas[i]);
+        cellWins(table_datas[i + 3]);
+        cellWins(table_datas[i + 6]);
+        alert(jogador2.nome + ' wins!!!');
+        removeClicks();
+      }
     }
   }
 };
-
 /*Verifica a existência de ocorrências de um mesmo elemento(X ou O) nas diagonais do tabuleiro, procurando um vencedor*/
 
 allElementsInSomeDiagonal = function () {
   if (tabuleiro[0] == 'X' && tabuleiro[4] == 'X' && tabuleiro[8] == 'X') {
     alert(jogador1.nome + ' wins!!!');
+    removeClicks();
     cellWins(table_datas[0]);
     cellWins(table_datas[4]);
     cellWins(table_datas[8]);
@@ -235,6 +237,7 @@ allElementsInSomeDiagonal = function () {
     tabuleiro[6] == 'X'
   ) {
     alert(jogador1.nome + ' wins!!!');
+    removeClicks();
     cellWins(table_datas[2]);
     cellWins(table_datas[4]);
     cellWins(table_datas[6]);
@@ -244,6 +247,7 @@ allElementsInSomeDiagonal = function () {
     tabuleiro[8] == 'O'
   ) {
     alert(jogador2.nome + ' wins!!!');
+    removeClicks();
     cellWins(table_datas[0]);
     cellWins(table_datas[4]);
     cellWins(table_datas[8]);
@@ -253,11 +257,22 @@ allElementsInSomeDiagonal = function () {
     tabuleiro[6] == 'O'
   ) {
     alert(jogador2.nome + ' wins!!!');
+    removeClicks();
     cellWins(table_datas[2]);
     cellWins(table_datas[4]);
     cellWins(table_datas[6]);
   }
 };
+
+const btnCell0 = document.getElementById('cell0');
+const btnCell1 = document.getElementById('cell1');
+const btnCell2 = document.getElementById('cell2');
+const btnCell3 = document.getElementById('cell3');
+const btnCell4 = document.getElementById('cell4');
+const btnCell5 = document.getElementById('cell5');
+const btnCell6 = document.getElementById('cell6');
+const btnCell7 = document.getElementById('cell7');
+const btnCell8 = document.getElementById('cell8');
 
 /*Preenche a célula da tabela HTML escolhida pelo usuário ao clicar, além de cuidar do jogador atual da rodada e chamar as funções
 
@@ -293,43 +308,37 @@ function setOnCeil(cell, pos) {
   }
 }
 
-const btnCell0 = document.getElementById('cell0');
-const btnCell1 = document.getElementById('cell1');
-const btnCell2 = document.getElementById('cell2');
-const btnCell3 = document.getElementById('cell3');
-const btnCell4 = document.getElementById('cell4');
-const btnCell5 = document.getElementById('cell5');
-const btnCell6 = document.getElementById('cell6');
-const btnCell7 = document.getElementById('cell7');
-const btnCell8 = document.getElementById('cell8');
+const setCell0 = () => setOnCeil(btnCell0, 0);
+const setCell1 = () => setOnCeil(btnCell1, 1);
+const setCell2 = () => setOnCeil(btnCell2, 2);
+const setCell3 = () => setOnCeil(btnCell3, 3);
+const setCell4 = () => setOnCeil(btnCell4, 4);
+const setCell5 = () => setOnCeil(btnCell5, 5);
+const setCell6 = () => setOnCeil(btnCell6, 6);
+const setCell7 = () => setOnCeil(btnCell7, 7);
+const setCell8 = () => setOnCeil(btnCell8, 8);
 
-btnCell0.addEventListener('click', () => {
-  setOnCeil(btnCell0, 0);
-});
-btnCell1.addEventListener('click', () => {
-  setOnCeil(btnCell1, 1);
-});
-btnCell2.addEventListener('click', () => {
-  setOnCeil(btnCell2, 2);
-});
-btnCell3.addEventListener('click', () => {
-  setOnCeil(btnCell3, 3);
-});
-btnCell4.addEventListener('click', () => {
-  setOnCeil(btnCell4, 4);
-});
-btnCell5.addEventListener('click', () => {
-  setOnCeil(btnCell5, 5);
-});
-btnCell6.addEventListener('click', () => {
-  setOnCeil(btnCell6, 6);
-});
-btnCell7.addEventListener('click', () => {
-  setOnCeil(btnCell7, 7);
-});
-btnCell8.addEventListener('click', () => {
-  setOnCeil(btnCell8, 8);
-});
+btnCell0.addEventListener('click', setCell0);
+btnCell1.addEventListener('click', setCell1);
+btnCell2.addEventListener('click', setCell2);
+btnCell3.addEventListener('click', setCell3);
+btnCell4.addEventListener('click', setCell4);
+btnCell5.addEventListener('click', setCell5);
+btnCell6.addEventListener('click', setCell6);
+btnCell7.addEventListener('click', setCell7);
+btnCell8.addEventListener('click', setCell8);
+
+function removeClicks() {
+  btnCell0.removeEventListener('click', setCell0);
+  btnCell1.removeEventListener('click', setCell1);
+  btnCell2.removeEventListener('click', setCell2);
+  btnCell3.removeEventListener('click', setCell3);
+  btnCell4.removeEventListener('click', setCell4);
+  btnCell5.removeEventListener('click', setCell5);
+  btnCell6.removeEventListener('click', setCell6);
+  btnCell7.removeEventListener('click', setCell7);
+  btnCell8.removeEventListener('click', setCell8);
+}
 
 function pararJogo() {
   if (jogadoresAtivos) {
